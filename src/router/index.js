@@ -11,6 +11,8 @@ import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
+import reimbursementRouter from './modules/reimbursement'
+import goodsRouter from './modules/goods'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -80,6 +82,19 @@ export const constantRoutes = [
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
         meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/home',
+    component: Layout,
+    redirect: '/home',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/home/index'),
+        name: 'Home',
+        meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
   },
@@ -189,6 +204,8 @@ export const asyncRoutes = [
   chartsRouter,
   nestedRouter,
   tableRouter,
+  reimbursementRouter,
+  goodsRouter,
 
   {
     path: '/example',

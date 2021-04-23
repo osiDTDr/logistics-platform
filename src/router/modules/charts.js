@@ -29,6 +29,12 @@ const chartsRouter = {
       component: () => import('@/views/charts/mix-chart'),
       name: 'MixChart',
       meta: { title: 'Mix Chart', noCache: true }
+    },
+    {
+      path: 'histogram',
+      component: () => import('@/views/charts/histogram'),
+      name: 'histogram',
+      meta: { title: 'histogram', noCache: true }
     }
   ]
 }
